@@ -1,2 +1,2 @@
-# reactexperiments.github.io
+# React Experiments
 My React.JS experiments
