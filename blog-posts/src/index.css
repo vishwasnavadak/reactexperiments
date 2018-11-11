@@ -1,0 +1,69 @@
+body {
+  color: #ffffff;
+  margin: 0;
+  padding: 0;
+  font-family: "Verdana", sans-serif;
+  background-color: #1f2125;
+}
+
+body h1 {
+  font-size: 2em;
+  margin: 3px 10px;
+  text-align: center;
+}
+
+body h1 span {
+  color: #b3b3b3;
+}
+
+body a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.post-list {
+  list-style: none;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (auto)[3];
+      grid-template-columns: repeat(3, auto);
+  padding: 5px;
+  margin: 2px 5px;
+}
+
+.post-list .post-list-item {
+  padding: 5px;
+  margin: 3px;
+  text-align: center;
+}
+
+.post-list .post-list-item h3 {
+  font-size: 1.2em;
+  text-align: center;
+}
+
+.post-list .post-list-item p {
+  font-size: .9em;
+  text-align: justify;
+}
+
+.post-list .post-list-item .read-more {
+  font-size: 1em;
+  font-weight: bold;
+}
+
+.post-list .post-list-item .read-more:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 750px) {
+  .post-list {
+    -ms-grid-columns: auto;
+        grid-template-columns: auto;
+  }
+  .post-list-item {
+    border-bottom: 1px #4e535d solid;
+  }
+}
+/*# sourceMappingURL=index.css.map */

@@ -1,0 +1,67 @@
+$colors: (
+  primary:#ffffff,
+  primary-highlight:darken(#ffffff,30%),
+  primary-light:lighten(#1f2125,20%),
+  bg-color:#1f2125
+);
+
+@function color($color-name){
+  @return map-get($colors,$color-name);
+}
+body {
+  color:color(primary);
+  margin: 0;
+  padding: 0;
+  font-family: "Verdana",
+    sans-serif;
+  background-color: color(bg-color);
+  h1 {
+    font-size:2em;
+    margin: 3px 10px;
+    text-align: center;
+    span {
+      color:color(primary-highlight);
+    }
+  }
+  a {
+    text-decoration: none;
+    color:color(primary);
+  }
+}
+.post-list{
+  list-style: none;
+  display:grid;
+  grid-template-columns: repeat(3,auto);
+  padding:5px;
+  margin:2px 5px;
+  .post-list-item { 
+    padding:5px;
+    margin:3px; 
+    text-align: center;
+    h3 {
+      font-size:1.2em;
+      text-align:center;
+    }
+    p {
+      font-size:.9em;
+      text-align:justify;
+    }
+    .read-more {
+      font-size:1em;
+      font-weight: bold;
+    }
+    .read-more:hover{
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+}
+
+@media screen and (max-width:750px){
+  .post-list{
+    grid-template-columns: auto;
+  }
+  .post-list-item {
+    border-bottom:1px color(primary-light) solid;
+  }
+}
