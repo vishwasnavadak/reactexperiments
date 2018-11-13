@@ -2,13 +2,20 @@ import React, { Component } from 'react'
 import {connect} from 'react-redux';
 import {fetchTodoList} from '../actions'
 class TodoList extends Component {
-  componentDidMount(){
+  
+  componentWillMount(){
       this.props.fetchTodoList();
   }
   render() {
+    if(!this.props.todos){
+      return (
+        <div>Loading...</div>
+      );
+    }
+    console.log(this.props.todos);
     return (
       <div>
-        list
+         list
       </div>
     )
   }
