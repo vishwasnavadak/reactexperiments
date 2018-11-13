@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import {fetchTodoList} from '../actions'
 class TodoList extends Component {
   
-  componentWillMount(){
+  componentDidMount(){
       this.props.fetchTodoList();
   }
   render() {
