@@ -1,10 +1,22 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux';
+import _ from 'lodash';
+
 import {fetchTodoList} from '../actions'
+import TodoItem from './todoitem';
+import AddTodo from './addtodo';
+
 class TodoList extends Component {
   
   componentDidMount(){
       this.props.fetchTodoList();
+  }
+  renderTodoList(){
+    return _.map(this.props.todos, todo => {
+      return (
+        <TodoItem item={todo} key={todo.id}/>
+      );
+    })
   }
   render() {
     if(!this.props.todos){
@@ -12,10 +24,12 @@ class TodoList extends Component {
         <div>Loading...</div>
       );
     }
-    console.log(this.props.todos);
     return (
       <div>
-         list
+        <AddTodo />
+        <ul className="todo-list">
+        {this.renderTodoList()}
+        </ul>
       </div>
     )
   }
