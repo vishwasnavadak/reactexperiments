@@ -5,7 +5,6 @@ export function fetchTodoList(){
         method: 'GET',
         headers:{
             'Content-Type': 'application/json',
-            crossdomain: true,
             'x-api-key': '7BAzKhsJHd80OKCUErTSl5jtq9L4lanY6za8dpKX'
         }
     })
