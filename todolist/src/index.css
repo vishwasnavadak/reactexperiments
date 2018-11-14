@@ -1,11 +1,23 @@
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
 body {
-  margin: 0;
-  padding: 0;
+  margin:5px 10px;
+  padding:5px 10px;
   font-family: "Verdana",
     sans-serif;
   text-align: center;
 }
 
+.todo-container {
+  max-width: 320px;
+  margin:30px auto;
+}
 .todo-item {
-  color:#000000;
+  padding:10px 10px;
+  margin:5px;
+}
+.item-icon {
+  color:#797777;
+  cursor: pointer;
+  margin:3px;
 }

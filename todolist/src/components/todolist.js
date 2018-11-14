@@ -9,7 +9,7 @@ import AddTodo from './addtodo';
 class TodoList extends Component {
   
   componentDidMount(){
-      this.props.fetchTodoList();
+      //this.props.fetchTodoList();
   }
   renderTodoList(){
     return _.map(this.props.todos, todo => {
@@ -25,8 +25,8 @@ class TodoList extends Component {
       );
     }
     return (
-      <div>
-        <AddTodo />
+      <div className="todo-container">
+        <AddTodo addTodo={(item) => this.props.addTodo(item)}/>
         <ul className="todo-list">
         {this.renderTodoList()}
         </ul>
