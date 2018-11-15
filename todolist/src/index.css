@@ -25,7 +25,7 @@ body {
 .item-text{
   margin:5px auto;
 }
-.item-icons {
+.item-icon {
   color:#888585;
   cursor: pointer;
   margin:5px 5px;
@@ -37,6 +37,6 @@ body {
   background-color:#e5e5e5 !important;
   padding:10px 10px;
 }
-.completed > .item-icons > .check {
+.completed > .item-icon > .check {
   display: none;
 }

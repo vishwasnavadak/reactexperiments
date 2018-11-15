@@ -7,15 +7,12 @@ export default function(state={},action) {
         case ActionTypes.FETCH_TODOLIST:
             return _.mapKeys(_.orderBy(action.payload,["isCompleted","timestamp"],["asc","desc"]),"id");
         case ActionTypes.ADD_TODO:
-            //TODO adding the new element to state
-           /*  console.log(action.payload);
-            console.log(state);
-            return ({...state,action.payload['id']:{}}); */
-            return state;
+            const newState = {...state,[action.payload.id]:action.payload};
+            return _.orderBy(newState,["isCompleted","timestamp"],["asc","desc"]); 
         case ActionTypes.DELETE_TODO:
-            return _.omit(state,action.payload);
+            return _.omit(_.mapKeys(state,"id"),action.payload);
         case ActionTypes.UPDATE_TODO:
-            const newState = _.map(state,item => {
+            const updatedState = _.map(state,item => {
                 if(item.id === action.payload) {
                    return {
                        ...item, 
@@ -23,8 +20,8 @@ export default function(state={},action) {
                    }
                 }
                 return item;
-            })
-            return _.orderBy(newState,["isCompleted","timestamp"],["asc","desc"]);
+            });
+            return _.orderBy(updatedState,["isCompleted","timestamp"],["asc","desc"]);
         default:
             return state;
     }

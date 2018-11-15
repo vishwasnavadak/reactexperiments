@@ -6,9 +6,11 @@ const TodoItem = ({item,onDelete,onComplete}) => {
   return (
     <li className={className}>
         <span className="item-text">{item.desc}</span>
-        <span className="item-icons right">
-        <i className="material-icons check" onClick={() => onComplete(item.id)}>check</i>
-        <i className="material-icons delete" onClick={() => onDelete(item.id)}>close</i>
+        <span className="item-icon right">
+        <i className="material-icons delete" onClick={() => onDelete(item.id)} title="Delete this task">close</i>
+        </span>
+        <span className="item-icon right">
+        <i className="material-icons check" onClick={() => onComplete(item.id)} title="Mark as done">check</i>
         </span>
     </li>
   )

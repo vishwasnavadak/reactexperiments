@@ -20,7 +20,7 @@ class AddTodo extends Component {
     return (
       <div>
         <form onSubmit={this.sendValue}>
-        <input required type="text" name="item" placeholder="Add Task" value={this.state.item} onChange={e => this.setState({item:e.target.value})}/>
+        <input type="text" name="item" placeholder="Add Task" value={this.state.item} onChange={e => this.setState({item:e.target.value})} required autoFocus/>
         <button className="btn" type="submit">Add</button> 
         </form>
       </div>
