@@ -1,18 +1,15 @@
 import React from 'react';
-// import todo_reducer from '../reducers/todo_reducer';
 
-const TodoItem = ({item}) => {
+
+const TodoItem = ({item,onDelete,onComplete}) => {
+  const className=`card todo-item ${item.isCompleted?"completed":""}`;
   return (
-    <li className="card todo-item">
-    <div>
+    <li className={className}>
         <span className="item-text">{item.desc}</span>
-        <span className="item-icon right">
-        <i className="material-icons">close</i>
+        <span className="item-icons right">
+        <i className="material-icons check" onClick={() => onComplete(item.id)}>check</i>
+        <i className="material-icons delete" onClick={() => onDelete(item.id)}>close</i>
         </span>
-        <span className="item-icon right">
-          <i className="material-icons">check</i>
-        </span>
-    </div>
     </li>
   )
 }
