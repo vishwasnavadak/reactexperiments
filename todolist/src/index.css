@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+@import url('https://fonts.googleapis.com/css?family=Economica');
 
 body {
   margin:5px 10px;
   padding:5px 10px;
-  font-family: "Verdana",
-    sans-serif;
+  font-family: 'Economica', sans-serif;
   text-align: center;
 }
 
@@ -13,11 +13,30 @@ body {
   margin:30px auto;
 }
 .todo-item {
-  padding:10px 10px;
-  margin:5px;
+  padding:13px 10px;
+  margin:8px;
+  background-color:#ece7e7 !important;
+  color:#3d3d3d;
+  font-size: 1.3em;
+  font-weight: bold;
+  line-height: 2.6em !important;
+  text-transform: uppercase;
 }
-.item-icon {
-  color:#797777;
+.item-text{
+  margin:5px auto;
+}
+.item-icons {
+  color:#888585;
   cursor: pointer;
-  margin:3px;
+  margin:5px 5px;
+  padding:0;
+}
+.completed {
+  text-decoration: line-through;
+  opacity: 0.5;
+  background-color:#e5e5e5 !important;
+  padding:10px 10px;
+}
+.completed > .item-icons > .check {
+  display: none;
 }
