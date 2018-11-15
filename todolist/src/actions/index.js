@@ -1,7 +1,7 @@
-export const FETCH_TODOLIST="FETCH_TODOLIST";
-export const ADD_TODO="ADD_TODO";
-export const DELETE_TODO="DELETE_TODO";
-export const UPDATE_TODO="UPDATE_TODO";
+export const ActionTypes = {FETCH_TODOLIST:"FETCH_TODOLIST",
+                            ADD_TODO:"ADD_TODO",
+                            DELETE_TODO:"DELETE_TODO",
+                            UPDATE_TODO:"UPDATE_TODO"};
 
 export function fetchTodoList(){
     var request = fetch('https://xzm0v749a7.execute-api.us-east-1.amazonaws.com/default/todoFetchItems',{
@@ -13,29 +13,30 @@ export function fetchTodoList(){
     })
     .then(response => response.json())
     .then((data) => { return data; } )
-    .catch(error => console.log('Error:', error));
+    .catch(error => console.log('Error while fetching:', error));
     return ({
-        type:FETCH_TODOLIST,
+        type:ActionTypes.FETCH_TODOLIST,
         payload:request
     })
 }
-export function addTodo(item){
-    console.log("called: "+item);
-    var request = fetch('https://pp0qmqrqt6.execute-api.us-east-1.amazonaws.com/default/todoAddItem?desc='+item,{
+export function addTodo(item,callback){
+    var request = fetch(`https://pp0qmqrqt6.execute-api.us-east-1.amazonaws.com/default/todoAddItem?desc=${item}`,{
         method: 'POST',
         headers:{
             'Content-Type': 'application/json',
             'x-api-key': 'FBbnY5sYVG6amtR8Fcz8t8bLS5epGKMN3gRMMIuv'
         }
     })
-    .catch(error => console.log('Error:', error));
+    .then(response => response.json())
+    .then((data) => { return data; } )
+    .catch(error => console.log('Error while adding:', error));
     return ({
-        type:ADD_TODO,
+        type:ActionTypes.ADD_TODO,
         payload:request
     })
 }
-export function deleteTodo(){
-    var request = fetch('https://ps0cknoeeb.execute-api.us-east-1.amazonaws.com/default/todoDeleteItem',{
+export function deleteTodo(id){
+    var request = fetch(`https://ps0cknoeeb.execute-api.us-east-1.amazonaws.com/default/todoDeleteItem?id=${id}`,{
         method: 'DELETE',
         headers:{
             'Content-Type': 'application/json',
@@ -44,14 +45,14 @@ export function deleteTodo(){
     })
     .then(response => response.json())
     .then((data) => { return data; } )
-    .catch(error => console.log('Error:', error));
+    .catch(error => console.log('Error while deleting:', error));
     return ({
-        type:FETCH_TODOLIST,
+        type:ActionTypes.DELETE_TODO,
         payload:request
     })
 }
-export function updateTodo(){
-    var request = fetch('https://d7h55xdv0f.execute-api.us-east-1.amazonaws.com/default/todoUpdateItem',{
+export function updateTodo(id){
+    var request = fetch(`https://d7h55xdv0f.execute-api.us-east-1.amazonaws.com/default/todoUpdateItem?id=${id}`,{
         method: 'POST',
         headers:{
             'Content-Type': 'application/json',
@@ -60,9 +61,9 @@ export function updateTodo(){
     })
     .then(response => response.json())
     .then((data) => { return data; } )
-    .catch(error => console.log('Error:', error));
+    .catch(error => console.log('Error while updating:', error));
     return ({
-        type:FETCH_TODOLIST,
+        type:ActionTypes.UPDATE_TODO,
         payload:request
     })
 }
