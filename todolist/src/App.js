@@ -8,6 +8,7 @@ class App extends Component {
       <div className="App">
         <h2>Todo List</h2>
         <TodoList />
+        <footer>Fork this at <a href="https://github.com/vishwasnavadak/reactexperiments/" target="_blank" rel="noopener noreferrer">Github/vishwasnavadak/reactexperiments/todolist</a></footer>
       </div>
     );
   }

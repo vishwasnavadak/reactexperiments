@@ -8,6 +8,7 @@ class App extends Component {
     return (
       <div className="App">
         <PostList />
+        <footer>Fork this at <a href="https://github.com/vishwasnavadak/reactexperiments/" target="_blank" rel="noopener noreferrer">Github/vishwasnavadak/reactexperiments/blog-posts</a></footer>
       </div>
     );
   }
