@@ -20,7 +20,7 @@ class AddTodo extends Component {
     return (
       <div>
         <form onSubmit={this.sendValue}>
-        <input type="text" name="item" placeholder="Add Task" value={this.state.item} onChange={e => this.setState({item:e.target.value})} required autoFocus pattern="[a-zA-Z0-9]*"/>
+        <input type="text" name="item" placeholder="Add Task" value={this.state.item} onChange={e => this.setState({item:e.target.value})} required autoFocus pattern="^[a-zA-Z0-9]+( [a-zA-Z0-9]+)*$"/>
         <button className="btn" type="submit">Add</button> 
         </form>
       </div>
