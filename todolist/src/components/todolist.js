@@ -25,7 +25,9 @@ class TodoList extends Component {
   }
   render() {
     if(!this.props.todos){
+      console.log("its loading");
       return (
+
         <div>Loading...</div>
       );
     }
